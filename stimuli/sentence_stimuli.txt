@@ -1,0 +1,160 @@
+1,Yoda who Bart Simpson is chasing is a movie character
+2,Yoda is the movie character who Bart Simpson is chasing.
+3,Yoda who is chasing Bart Simpson is a movie character.
+4,Yoda is the movie character who is chasing Bart Simpson
+5,Yoda who Bart Simpson is chasing is a wise master
+6,Yoda is the wise master who Bart Simpson is chasing.
+7,Yoda who is chasing Bart Simpson is a wise master.
+8,Yoda is the wise master who is chasing Bart Simpson
+9,Yoda who Bart Simpson is racing is a movie character
+10,Yoda is the movie character who Bart Simpson is racing.
+11,Yoda who is racing Bart Simpson is a movie character.
+12,Yoda is the movie character who is racing Bart Simpson
+13,Yoda who Bart Simpson is racing is a wise master
+14,Yoda is the wise master who Bart Simpson is racing.
+15,Yoda who is racing Bart Simpson is a wise master.
+16,Yoda is the wise master who is racing Bart Simpson
+17,Yoda who Bart Simpson is kissing is a movie character
+18,Yoda is the movie character who Bart Simpson is kissing.
+19,Yoda who is kissing Bart Simpson is a movie character.
+20,Yoda is the movie character who is kissing Bart Simpson
+21,Yoda who Bart Simpson is kissing is a wise master
+22,Yoda is the wise master who Bart Simpson is kissing.
+23,Yoda who is kissing Bart Simpson is a wise master.
+24,Yoda is the wise master who is kissing Bart Simpson
+25,Yoda who Bart Simpson is hugging is a movie character
+26,Yoda is the movie character who Bart Simpson is hugging.
+27,Yoda who is hugging Bart Simpson is a movie character.
+28,Yoda is the movie character who is hugging Bart Simpson
+29,Yoda who Bart Simpson is hugging is a wise master
+30,Yoda is the wise master who Bart Simpson is hugging.
+31,Yoda who is hugging Bart Simpson is a wise master.
+32,Yoda is the wise master who is hugging Bart Simpson
+33,Bart Simpson who Yoda is chasing is a TV cartoon
+34,Bart Simpson is the TV cartoon who Yoda is chasing.
+35,Bart Simpson who is chasing Yoda is a TV cartoon.
+36,Bart Simpson is the TV cartoon who is chasing Yoda
+37,Bart Simpson who Yoda is chasing is a famous character
+38,Bart Simpson is the famous character who Yoda is chasing.
+39,Bart Simpson who is chasing Yoda is a famous character.
+40,Bart Simpson is the famous character who is chasing Yoda
+41,Bart Simpson who Yoda is racing is a TV cartoon
+42,Bart Simpson is the TV cartoon who Yoda is racing.
+43,Bart Simpson who is racing Yoda is a TV cartoon.
+44,Bart Simpson is the TV cartoon who is racing Yoda
+45,Bart Simpson who Yoda is racing is a famous character
+46,Bart Simpson is the famous character who Yoda is racing.
+47,Bart Simpson who is racing Yoda is a famous character.
+48,Bart Simpson is the famous character who is racing Yoda
+49,Bart Simpson who Yoda is kissing is a TV cartoon
+50,Bart Simpson is the TV cartoon who Yoda is kissing.
+51,Bart Simpson who is kissing Yoda is a TV cartoon.
+52,Bart Simpson is the TV cartoon who is kissing Yoda
+53,Bart Simpson who Yoda is kissing is a famous character
+54,Bart Simpson is the famous character who Yoda is kissing.
+55,Bart Simpson who is kissing Yoda is a famous character.
+56,Bart Simpson is the famous character who is kissing Yoda
+57,Bart Simpson who Yoda is hugging is a TV cartoon
+58,Bart Simpson is the TV cartoon who Yoda is hugging.
+59,Bart Simpson who is hugging Yoda is a TV cartoon.
+60,Bart Simpson is the TV cartoon who is hugging Yoda
+61,Bart Simpson who Yoda is hugging is a famous character
+62,Bart Simpson is the famous character who Yoda is hugging.
+63,Bart Simpson who is hugging Yoda is a famous character.
+64,Bart Simpson is the famous character who is hugging Yoda
+65,Yoda is saying that Bart Simpson is chasing him
+66,Yoda is saying that Bart Simpson is racing him
+67,Yoda is saying that Bart Simpson is kissing him
+68,Yoda is saying that Bart Simpson is hugging him
+69,Yoda is complaining that Bart Simpson is chasing him
+70,Yoda is complaining that Bart Simpson is racing him
+71,Yoda is complaining that Bart Simpson is kissing him
+72,Yoda is complaining that Bart Simpson is hugging him
+73,Bart Simpson is saying that Yoda is chasing him
+74,Bart Simpson is saying that Yoda is racing him
+75,Bart Simpson is saying that Yoda is kissing him
+76,Bart Simpson is saying that Yoda is hugging him
+77,Bart Simpson is complaining that Yoda is chasing him
+78,Bart Simpson is complaining that Yoda is racing him
+79,Bart Simpson is complaining that Yoda is kissing him
+80,Bart Simpson is complaining that Yoda is hugging him
+81,The leopard who Tyrion Lannister is chasing is a dangerous animal
+82,The leopard is the dangerous animal who Tyrion Lannister is chasing.
+83,The leopard who is chasing Tyrion Lannister is a dangerous animal.
+84,The leopard is the dangerous animal who is chasing Tyrion Lannister
+85,The leopard who Tyrion Lannister is chasing is a safari feline
+86,The leopard is the safari feline who Tyrion Lannister is chasing.
+87,The leopard who is chasing Tyrion Lannister is a safari feline.
+88,The leopard is the safari feline who is chasing Tyrion Lannister
+89,The leopard who Tyrion Lannister is racing is a dangerous animal
+90,The leopard is the dangerous animal who Tyrion Lannister is racing.
+91,The leopard who is racing Tyrion Lannister is a dangerous animal.
+92,The leopard is the dangerous animal who is racing Tyrion Lannister
+93,The leopard who Tyrion Lannister is racing is a safari feline
+94,The leopard is the safari feline who Tyrion Lannister is racing.
+95,The leopard who is racing Tyrion Lannister is a safari feline.
+96,The leopard is the safari feline who is racing Tyrion Lannister
+97,The leopard who Tyrion Lannister is kissing is a dangerous animal
+98,The leopard is the dangerous animal who Tyrion Lannister is kissing.
+99,The leopard who is kissing Tyrion Lannister is a dangerous animal.
+100,The leopard is the dangerous animal who is kissing Tyrion Lannister
+101,The leopard who Tyrion Lannister is kissing is a safari feline
+102,The leopard is the safari feline who Tyrion Lannister is kissing.
+103,The leopard who is kissing Tyrion Lannister is a safari feline.
+104,The leopard is the safari feline who is kissing Tyrion Lannister
+105,The leopard who Tyrion Lannister is hugging is a dangerous animal
+106,The leopard is the dangerous animal who Tyrion Lannister is hugging.
+107,The leopard who is hugging Tyrion Lannister is a dangerous animal.
+108,The leopard is the dangerous animal who is hugging Tyrion Lannister
+109,The leopard who Tyrion Lannister is hugging is a safari feline
+110,The leopard is the safari feline who Tyrion Lannister is hugging.
+111,The leopard who is hugging Tyrion Lannister is a safari feline.
+112,The leopard is the safari feline who is hugging Tyrion Lannister
+113,Tyrion Lannister who the leopard is chasing is a great star
+114,Tyrion Lannister is the great star who the leopard is chasing.
+115,Tyrion Lannister who is chasing the leopard is a great star.
+116,Tyrion Lannister is the great star who is chasing the leopard
+117,Tyrion Lannister who the leopard is chasing is a smart dwarf
+118,Tyrion Lannister is the smart dwarf who the leopard is chasing.
+119,Tyrion Lannister who is chasing the leopard is a smart dwarf.
+120,Tyrion Lannister is the smart dwarf who is chasing the leopard
+121,Tyrion Lannister who the leopard is racing is a great star
+122,Tyrion Lannister is the great star who the leopard is racing.
+123,Tyrion Lannister who is racing the leopard is a great star.
+124,Tyrion Lannister is the great star who is racing the leopard
+125,Tyrion Lannister who the leopard is racing is a smart dwarf
+126,Tyrion Lannister is the smart dwarf who the leopard is racing.
+127,Tyrion Lannister who is racing the leopard is a smart dwarf.
+128,Tyrion Lannister is the smart dwarf who is racing the leopard
+129,Tyrion Lannister who the leopard is kissing is a great star
+130,Tyrion Lannister is the great star who the leopard is kissing.
+131,Tyrion Lannister who is kissing the leopard is a great star.
+132,Tyrion Lannister is the great star who is kissing the leopard
+133,Tyrion Lannister who the leopard is kissing is a smart dwarf
+134,Tyrion Lannister is the smart dwarf who the leopard is kissing.
+135,Tyrion Lannister who is kissing the leopard is a smart dwarf.
+136,Tyrion Lannister is the smart dwarf who is kissing the leopard
+137,Tyrion Lannister who the leopard is hugging is a great star
+138,Tyrion Lannister is the great star who the leopard is hugging.
+139,Tyrion Lannister who is hugging the leopard is a great star.
+140,Tyrion Lannister is the great star who is hugging the leopard
+141,Tyrion Lannister who the leopard is hugging is a smart dwarf
+142,Tyrion Lannister is the smart dwarf who the leopard is hugging.
+143,Tyrion Lannister who is hugging the leopard is a smart dwarf.
+144,Tyrion Lannister is the smart dwarf who is hugging the leopard
+145,The leopard is saying that Tyrion Lannister is chasing him
+146,The leopard is saying that Tyrion Lannister is racing him
+147,The leopard is saying that Tyrion Lannister is kissing him
+148,The leopard is saying that Tyrion Lannister is hugging him
+149,The leopard is complaining that Tyrion Lannister is chasing him
+150,The leopard is complaining that Tyrion Lannister is racing him
+151,The leopard is complaining that Tyrion Lannister is kissing him
+152,The leopard is complaining that Tyrion Lannister is hugging him
+153,Tyrion Lannister is saying that the leopard is chasing him
+154,Tyrion Lannister is saying that the leopard is racing him
+155,Tyrion Lannister is saying that the leopard is kissing him
+156,Tyrion Lannister is saying that the leopard is hugging him
+157,Tyrion Lannister is complaining that the leopard is chasing him
+158,Tyrion Lannister is complaining that the leopard is racing him
+159,Tyrion Lannister is complaining that the leopard is kissing him
+160,Tyrion Lannister is complaining that the leopard is hugging him

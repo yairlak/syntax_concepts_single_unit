@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "inspiring-ring-329422",
+  "private_key_id": "d6ac626320e3dacdd3897d107d95054179f43260",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCaqqzPpv2/fBsv\n6HYkH0zCFPQ2oQOOIygqUFEleHv0Qf9n+VxHoXn3OW7JvOnf3S2fh5LxElOw/5Kc\nrht3fYU7f6crwxNytPd9omgSGsld7gxRd6/OWyB9attYZFOiMhwXBcDrH+a2Q7Ua\nstBomdoWlTLQxvZDs1KmNnJUk5JgXLHyIyya5RrrDsnyMDMJ1uIG8jVM6KVpY4U3\neWoXzoMnSxbiOtI5aa2GbdAvAv9aAGlN3um0D8GoSFpOPQtQxqyNH2hlaDdjHDNf\nvYVWUCqyTGPS6DPWmNQMwV6IGpjPPE8JyDyx8zPyK8EsWkFQQeVn989X9Y9jvulI\n/QWQpic9AgMBAAECggEAAbzcgjIYdG1QNOKXaTfSJKAYT6t8HxMKttGo3RM/I/MV\n4TTZB5OrNiQ2uBzfl9H5WusqsyYHO1wzvn+U9BZnR9AwWvqEc8ElbWDvaxH9TzPc\nfucpr4IwmZgjbMPRI2e4DxN+eRB7sXKN91so956QPQ63anHB1JLli9PdcaZ9ejMB\nRqLJnCMeLYD3oFEZvzimYqNY7yeH4F2IPgF2TtKLD3bbHG2dLtCk/HOu4FsRMpgH\nBiR+wEVCeU31Ao23V4bkUk0iIn169GVINSWQCM4DNKLXaXJ6OTNRlVdgH98ZW+CR\nYzvbzFwFW+ab0yuCxam4/5wHS2hPEwXCGteS6qbOAQKBgQDRdvlIeLXXkDLQhOhi\nQGbOqa4lcNRzX5X8ptn4Feh40mBfth1hxkoBL/QsFyol1XNzjveuwxNzPjl1lM0n\nZPvPhC9+wZNNY/nrIcmhGmrJv80eNpkwNTGvIhERy0h3/3nofnu3HgG5GahGaaZO\njXxQq/AXiR8tfbNYhKo7IFYfvQKBgQC9ByLaMXX2TdRHyQtMj5Y5ZE/qXmirECaO\nos3shQV8tksNLfLtWGnLtdnya8VNwccnSY71muA76FgGu/dJH77dFWk2mwrDkH40\nZEawiQ/oFKsPvMvTaqFlWolQl4rkU1HHnNQZ9OPJcjHBwwy9ZCZZv0QDkGUbUpN1\nq/t+c+LdgQKBgQC7pD3aWzBjBC1ROM7IPXMbjUuRBMt881L0ey/mGxIfMi7dbtJR\nZYWkHKY63SGHtPhwu9FLwDtrUIG+wGcr9D3T/1Fg1t4zRO18Ys8yP+0MAIMqnrSK\nSAzTG8x4yUeJH9bAnJYNS5c1jzN8qGYwFnUX+37gRpkkcme4U1gAEY61bQKBgDHJ\nKF/JeSU3GHsTs3slsk5JYlb7KJwtc8pLjOsHmgtfw+KjwIDMsYiqy81ynxO8vuRV\nFmcPtJFyv4R+i0HiL5XxJrXwHeSmMOdBpfCnGN5qWyeY9SIoynt0Xggw8a7zVu25\nG4/+lOQgxIQhCED1mLg4jQRXSpnopNfwRRvoD8+BAoGBAL0RyWAnAtXbnxPeBRTj\nvDVbVtL2Z7E8iLBUCZlKokCtAE0lukwDZrDrF32i11CZLZLACbPgXQyj45FbIJCF\nxI0avMRsJbs3MAEKOE5aTcaVDeD4t/KZlGHJyqEMPHvzuTvyWXC6erMRCRV90SZu\nbkjtBv52sbORGZGx5ztpSOxX\n-----END PRIVATE KEY-----\n",
+  "client_email": "text2speech@inspiring-ring-329422.iam.gserviceaccount.com",
+  "client_id": "100856087835619610966",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/text2speech%40inspiring-ring-329422.iam.gserviceaccount.com"
+}
