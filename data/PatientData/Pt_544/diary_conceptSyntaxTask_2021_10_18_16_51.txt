@@ -1,0 +1,158 @@
+
+
+WARNING: This session of your experiment was run by you with the setting Screen('Preference', 'SkipSyncTests', 2).
+WARNING: This means that some internal self-tests and calibrations were skipped. Your stimulus presentation timing
+WARNING: may have been wrong. This is fine for development and debugging of your experiment, but for running the real
+WARNING: study, please make sure to set Screen('Preference', 'SkipSyncTests', 0) for maximum accuracy and reliability.
+PTB-INFO: Retina display. Enabling panel fitter for scaled Retina compatibility mode.
+
+
+PTB-INFO: This is Psychtoolbox-3 for Apple OS X, under Matlab 64-Bit (Version 3.0.17 - Build date: Apr 18 2021).
+PTB-INFO: OS support status: OSX version 10.14 is no longer tested or officially supported at all for this Psychtoolbox release.
+PTB-INFO: Type 'PsychtoolboxVersion' for more detailed version information.
+PTB-INFO: Most parts of the Psychtoolbox distribution are licensed to you under terms of the MIT License, with
+PTB-INFO: some restrictions. See file 'License.txt' in the Psychtoolbox root folder for the exact licensing conditions.
+
+PTB-INFO: For information about paid priority support, community membership and commercial services, please type
+PTB-INFO: 'PsychPaidSupportAndServices'.
+
+PTB-INFO: Installation of the PsychtoolboxKernelDriver is strongly recommended if you care about precise visual
+PTB-INFO: onset timestamping or timing. See 'help PsychtoolboxKernelDriver' for installation instructions.
+
+
+PTB-INFO: OpenGL-Renderer is ATI Technologies Inc. :: AMD Radeon Pro 555X OpenGL Engine :: 2.1 ATI-2.9.26
+PTB-INFO: Renderer has 4096 MB of VRAM and a maximum 3843 MB of texture memory.
+PTB-INFO: VBL startline = 2100 , VBL Endline = -1
+PTB-INFO: Beamposition queries unsupported or defective on this system. Using basic timestamping as fallback.
+PTB-INFO: Timestamps returned by Screen('Flip') will be therefore less robust and accurate.
+PTB-INFO: Measured monitor refresh interval from VBLsync = 0.000000 ms [inf Hz]. (0 valid samples taken, stddev=0.000000 ms.)
+PTB-INFO: Small deviations between reported values are normal and no reason to worry.
+PTB-WARNING: ==================================================================================================================
+PTB-WARNING: DESKTOP COMPOSITOR IS ACTIVE! ALL FLIP STIMULUS ONSET TIMESTAMPS WILL BE VERY LIKELY UNRELIABLE AND LESS ACCURATE!
+PTB-WARNING: STIMULUS ONSET TIMING WILL BE UNRELIABLE AS WELL, AND GRAPHICS PERFORMANCE MAY BE REDUCED!
+PTB-WARNING: DO NOT USE THIS MODE FOR RUNNING REAL EXPERIMENT SESSIONS WITH ANY REQUIREMENTS FOR ACCURATE TIMING!
+PTB-WARNING: ==================================================================================================================
+PTB-INFO: All display tests and calibrations disabled. Assuming a refresh interval of 60.000000 Hz. Timing will be inaccurate!
+PTB-INFO: Psychtoolbox imaging pipeline starting up for window with requested imagingmode 33793 ...
+PTB-INFO: Will use 8 bits per color component framebuffer for stimulus drawing.
+PTB-INFO: Enabling panel fitter. Providing virtual framebuffer of 1680 x 1050 pixels size.
+PTB-INFO: Will use 8 bits per color component framebuffer for stimulus post-processing (if any).
+timer_start at 2.7612e-05, (100)
+Loading audio stimuli...
+<a href="matlab: opentoline('/Users/cnl/Documents/PIPELINE/PARADIGMS/ConceptSyntax/syntax_concepts_single_unit/code/paradigm/conceptSyntax.m',59,1)">59  </a>1
+disp('Loading audio stimuli...')
+Loading audio stimuli...
+stims = dir(fullfile(stimuliDirectory,['*',audioFileExtension]));
+[loadedItems,textures] = loadAudioFiles(PTBparams,stimuliDirectory,stims)
+PTB-INFO: New audio device -1 with handle 0 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 1 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 2 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 3 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 4 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 5 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 6 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 7 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 8 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 9 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 10 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+PTB-INFO: New audio device -1 with handle 11 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 44100.000000 Hz. Input latency 0.000000 msecs, Output latency 9.365079 msecs.
+
+loadedItems = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+       sounds: {12×1 cell}
+    frequency: [12×1 double]
+
+
+textures = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    audioHandles: {12×1 cell}
+
+Begin Task at 540.4625, (1)
+ttlLog = ttl('Begin Task',ttlLog);
+Begin Task at 551.8744, (2)
+stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,cellfun(@(x)x,loadedItems.frequency,'uniformoutput',0))
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('cellfun')" style="font-weight:bold">cellfun</a>
+Input #2 expected to be a cell array, was double instead.
+} 
+<a href="matlab: opentoline('/Users/cnl/Documents/PIPELINE/PARADIGMS/ConceptSyntax/syntax_concepts_single_unit/code/paradigm/conceptSyntax.m',59,1)">59  </a>1
+stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,arrayfun(@(x)x,loadedItems.frequency,'uniformoutput',0));
+ttlLog = showInstructionSlideForDuration(PTBparams.w,'GetReady',ttlLog,ttl,1+rand(1)/5);
+Instructions at 1416.0684, (3)
+GetReady at 1416.075, (4)
+
+ans =
+
+   7.9225e+04
+
+Waited  1 Seconds at 1417.1935, (5)
+sprintf('Waited %2.f Seconds',waitDuration)
+{Unrecognized function or variable 'waitDuration'.
+} 
+<a href="matlab: opentoline('/Users/cnl/Documents/PIPELINE/PARADIGMS/ConceptSyntax/syntax_concepts_single_unit/code/paradigm/conceptSyntax.m',59,1)">59  </a>1
+waitDuration = 1.134234;
+sprintf('Waited %2.f Seconds',waitDuration)
+
+ans =
+
+    'Waited  1 Seconds'
+
+sprintf('Waited %.2f Seconds',waitDuration)
+
+ans =
+
+    'Waited 1.13 Seconds'
+
+sprintf('Waited %.3f Seconds',waitDuration)
+
+ans =
+
+    'Waited 1.134 Seconds'
+
+ttlLog = showInstructionSlideForDuration(PTBparams.w,'GetReady',ttlLog,ttl,1+rand(1)/5);
+Instructions at 1560.4622, (6)
+GetReady at 1560.4635, (7)
+
+ans =
+
+   7.9369e+04
+
+Waited  1 Seconds at 1561.4787, (8)
+ttlLog = showInstructionSlideForDuration(PTBparams.w,'GetReady',ttlLog,ttl,1+rand(1)/5);
+Instructions at 1612.8746, (9)
+GetReady at 1612.8757, (10)
+Waited 1.033 Seconds at 1613.9099, (11)
+Gray Screen at 1613.9235, (12)
+ttlLog = showInstructionSlideForDuration(PTBparams.w,'GetReady',ttlLog,ttl,1+rand(1)/5);
+Instructions: GetReady at 1657.882, (13)
+Waited 1.073 Seconds at 1658.9563, (14)
+Gray Screen at 1658.9687, (15)
+if system_dependent('IsDebugMode')==1, dbquit all; end
+conceptSyntax(544,0,1,'wav')
