@@ -1,7 +1,8 @@
-function conceptSyntax(patientNumber,useDAQ,debug,audioFileExtension,nReps,audioVisualOrBoth)
+function conceptSyntax(patientNumber,useDAQ,debug,audioFileExtension,nReps,audioVisualOrBoth,substitutions)
 
 paradigmFolder = fileparts(which('conceptSyntax.m'));
-addpath(paradigmFolder);
+codeFolder = fileparts(paradigmFolder);
+addpath(genpath(codeFolder));
 
 %% set default values
 if ~exist('patientNumber','var')||isempty(patientNumber)
@@ -21,7 +22,7 @@ end
 if ~exist('debugMode','var')||isempty(debugMode)
     debugMode = 0;
 end
-if ~exist('stimuliExtension','var')||isempty(audioFileExtension)
+if ~exist('audioFileExtension','var')||isempty(audioFileExtension)
     audioFileExtension = '.wav';
 elseif ~strcmp(audioFileExtension(1),'.')
     audioFileExtension = ['.',audioFileExtension];
@@ -31,6 +32,9 @@ if ~exist('nReps','var') || isempty(nReps)
 end
 if ~exist('audioVisualOrBoth','var') || isempty(audioVisualOrBoth)
     audioVisualOrBoth = 'audio';
+end
+if ~exist('substitutions','var')
+    substitutions = [];
 end
 
 switch audioVisualOrBoth
@@ -46,11 +50,22 @@ switch audioVisualOrBoth
 end
 
 dataDirectory = fullfile(fileparts(fileparts(paradigmFolder)),'data');
-stimuliDirectory = fullfile(strrep(dataDirectory,'data','stimuli'),'audio',...
+stimuliDirectory = fullfile(strrep(dataDirectory,'data','stimuli'),...
     sprintf('Pt_%s',patientNumber{1}));
 if ~exist(stimuliDirectory,'dir')
     mkdir(stimuliDirectory);
 end
+if isempty(dir(fullfile(stimuliDirectory,'*.txt')))
+    disp('Please find the list of sentences to read');
+    [d, f] = uigetfile;
+    copyfile(fullfile(d,f),fullfile(stimuliDirectory,'sentence_stimuli.txt'));
+end
+if isempty(dir(fullfile(stimuliDirectory,['*',audioFileExtension])))
+    disp('creating stimuli files')
+    createAudioAndSentenceFiles(stimuliDirectory,'sentence_stimuli.txt',substitutions)
+end
+sentences = load(fullfile(stimuliDirectory,'sentencesToShow.mat'));
+sentences = sentences.sentences;
 %% Start diary and get parameters for this patient
 
 cd(dataDirectory);
@@ -74,6 +89,9 @@ ttlLog = cell(0,3);
 if doAudioBlock
 disp('Loading audio stimuli...')
 stims = dir(fullfile(stimuliDirectory,['*',audioFileExtension]));
+stimNums = arrayfun(@(x)str2double(regexp(x.name,'\d*','match','once')),stims);
+[~,ind] = sort(stimNums);
+stims = stims(ind);
 [loadedItems,textures] = loadAudioFiles(PTBparams,stimuliDirectory,stims);
 end
 
@@ -91,7 +109,7 @@ try
             thisOrder = randperm(nStims)
             for s = thisOrder
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
-                ttlLog = playStimulus(stims(s).name,textures.audioHandles{s},stimDurations(s),ttl,ttlLog);
+                ttlLog = playStimulus(sentences{s},stims(s).name,textures.audioHandles{s},stimDurations(s),ttl,ttlLog);
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
                 [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
                 save(ttlSaveName,'ttlLog');
