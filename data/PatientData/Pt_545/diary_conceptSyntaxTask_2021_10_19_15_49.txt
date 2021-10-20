@@ -1,0 +1,574 @@
+PTB-INFO: Retina display. Enabling panel fitter for scaled Retina compatibility mode.
+
+
+PTB-INFO: This is Psychtoolbox-3 for Apple OS X, under Matlab 64-Bit (Version 3.0.17 - Build date: Apr 18 2021).
+PTB-INFO: OS support status: OSX version 10.14 is no longer tested or officially supported at all for this Psychtoolbox release.
+PTB-INFO: Type 'PsychtoolboxVersion' for more detailed version information.
+PTB-INFO: Most parts of the Psychtoolbox distribution are licensed to you under terms of the MIT License, with
+PTB-INFO: some restrictions. See file 'License.txt' in the Psychtoolbox root folder for the exact licensing conditions.
+
+PTB-INFO: For information about paid priority support, community membership and commercial services, please type
+PTB-INFO: 'PsychPaidSupportAndServices'.
+
+PTB-INFO: Installation of the PsychtoolboxKernelDriver is strongly recommended if you care about precise visual
+PTB-INFO: onset timestamping or timing. See 'help PsychtoolboxKernelDriver' for installation instructions.
+
+
+PTB-INFO: OpenGL-Renderer is ATI Technologies Inc. :: AMD Radeon Pro 555X OpenGL Engine :: 2.1 ATI-2.9.26
+PTB-INFO: Renderer has 4096 MB of VRAM and a maximum 3942 MB of texture memory.
+PTB-INFO: VBL startline = 2100 , VBL Endline = -1
+PTB-INFO: Beamposition queries unsupported or defective on this system. Using basic timestamping as fallback.
+PTB-INFO: Timestamps returned by Screen('Flip') will be therefore less robust and accurate.
+PTB-INFO: Measured monitor refresh interval from VBLsync = 0.000000 ms [inf Hz]. (0 valid samples taken, stddev=0.000000 ms.)
+PTB-INFO: Small deviations between reported values are normal and no reason to worry.
+PTB-WARNING: ==================================================================================================================
+PTB-WARNING: DESKTOP COMPOSITOR IS ACTIVE! ALL FLIP STIMULUS ONSET TIMESTAMPS WILL BE VERY LIKELY UNRELIABLE AND LESS ACCURATE!
+PTB-WARNING: STIMULUS ONSET TIMING WILL BE UNRELIABLE AS WELL, AND GRAPHICS PERFORMANCE MAY BE REDUCED!
+PTB-WARNING: DO NOT USE THIS MODE FOR RUNNING REAL EXPERIMENT SESSIONS WITH ANY REQUIREMENTS FOR ACCURATE TIMING!
+PTB-WARNING: ==================================================================================================================
+PTB-INFO: All display tests and calibrations disabled. Assuming a refresh interval of 60.000000 Hz. Timing will be inaccurate!
+PTB-INFO: Psychtoolbox imaging pipeline starting up for window with requested imagingmode 33793 ...
+PTB-INFO: Will use 8 bits per color component framebuffer for stimulus drawing.
+PTB-INFO: Enabling panel fitter. Providing virtual framebuffer of 1680 x 1050 pixels size.
+PTB-INFO: Will use 8 bits per color component framebuffer for stimulus post-processing (if any).
+PTB-INFO: Using modified PortAudio V19.6.0-devel, revision unknown
+timer_start at 8.3608e-05, (100)
+Loading audio stimuli...
+PTB-INFO: New audio device -1 with handle 0 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 1 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 2 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 3 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 4 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 5 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 6 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 7 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 8 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 9 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 10 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 11 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 12 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 13 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 14 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 15 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 16 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 17 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 18 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 19 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 20 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 21 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 22 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 23 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 24 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 25 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 26 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 27 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 28 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 29 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 30 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 31 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 32 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 33 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 34 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 35 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 36 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 37 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 38 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 39 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 40 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 41 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 42 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 43 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 44 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 45 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 46 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 47 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 48 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 49 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 50 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 51 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 52 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 53 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 54 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 55 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 56 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 57 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 58 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 59 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 60 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 61 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 62 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 63 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 64 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 65 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 66 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 67 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 68 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 69 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 70 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 71 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 72 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 73 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 74 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 75 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 76 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 77 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 78 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 79 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 80 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 81 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 82 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 83 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 84 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 85 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 86 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 87 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 88 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 89 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 90 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 91 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 92 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 93 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 94 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 95 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 96 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 97 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 98 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 99 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 100 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 101 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 102 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 103 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 104 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 105 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 106 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 107 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 108 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 109 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 110 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 111 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 112 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 113 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 114 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 115 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 116 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 117 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 118 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 119 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 120 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 121 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 122 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 123 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 124 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 125 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 126 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 127 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 128 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 129 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 130 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 131 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 132 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 133 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 134 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 135 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 136 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 137 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 138 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 139 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 140 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 141 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 142 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 143 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 144 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 145 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 146 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 147 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 148 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 149 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 150 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 151 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 152 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 153 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 154 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 155 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 156 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 157 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 158 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+PTB-INFO: New audio device -1 with handle 159 opened as PortAudio stream:
+PTB-INFO: For 2 channels Playback: Audio subsystem is Core Audio, Audio device name is MacBook Pro Speakers
+PTB-INFO: Real samplerate 22050.000000 Hz. Input latency 0.000000 msecs, Output latency 18.730159 msecs.
+Begin Task at 10.4384, (1)
+
+thisOrder =
+
+  Columns 1 through 20
+
+     4    66    50    87     1    68    72    44   100    30   125    88    73   129     7    25   138   108     6    39
+
+  Columns 21 through 40
+
+    28   118    33   146    57    77    81    65     5    16    23   154    93     2    12    54   122    26   143   106
+
+  Columns 41 through 60
+
+   111    69   155   103   109   117   126    48    96    94    15    83    29    38    60    34    37    53   127   136
+
+  Columns 61 through 80
+
+    22   114    75    45   115    27    79   158   134   104   150   119    62    78    46    64    82    61    13    95
+
+  Columns 81 through 100
+
+   102    92    85   149    21   124   145   160    40    47    43   130    90   140    84   135    97   113    17   144
+
+  Columns 101 through 120
+
+    89    35    42   132   142   123   147    20    41   112    11    55   141   137    52   128     8    71   139    86
+
+  Columns 121 through 140
+
+    32   156    49    63    74    98    58    14   148   133   107   110    18    51    99    31   121   157    70   105
+
+  Columns 141 through 160
+
+    59    80    67     9    19    56    91   120   159     3   151   152   101   153    76   131    36    10   116    24
+
+Instructions: + at 10.4931, (2)
+Waited 1.000 Seconds at 11.4964, (3)
+Playing 101.aiff for 3.910 seconds at 11.498, (4)
+Instructions: + at 15.4563, (5)
+Waited 1.121 Seconds at 16.5786, (6)
+Gray Screen at 16.5905, (7)
+Instructions: * at 16.6397, (8)
+     1
+
+Clicked at 23.4051, (9)
+Gray Screen at 23.4205, (10)
+Instructions: + at 23.4584, (11)
+Waited 1.000 Seconds at 24.4588, (12)
+Playing 158.aiff for 3.884 seconds at 24.4594, (13)
+Instructions: + at 28.3814, (14)
+Waited 1.184 Seconds at 29.5662, (15)
+Gray Screen at 29.5783, (16)
+Instructions: * at 29.6236, (17)
+     2
+
+Pressed Escape at 33.5861, (18)
+Gray Screen at 33.6099, (19)
