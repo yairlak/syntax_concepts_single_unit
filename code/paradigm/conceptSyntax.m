@@ -126,7 +126,7 @@ stims = dir(fullfile(loadDir,['*',audioFileExtension]));
 stimNums = arrayfun(@(x)str2double(regexp(x.name,'\d*','match','once')),stims);
 [~,ind] = sort(stimNums);
 stims = stims(ind);
-[loadedItems,textures] = loadAudioFiles(PTBparams,stimuliDirectory,stims);
+[loadedItems,textures] = loadAudioFiles(PTBparams,loadDir,stims);
 nStims = length(stims);
 stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,arrayfun(@(x)x,loadedItems.frequency,'uniformoutput',0));
 else
@@ -150,6 +150,7 @@ end
 try
     
     if doAudioBlock
+        ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('audio'),ttlLog,ttl,[1 1 1]);
         for rep = 1:nReps
             ttlLog = ttl(sprintf('Beginning Audio Block %d',rep),ttlLog);
             thisOrder = randperm(nStims);
@@ -166,10 +167,11 @@ try
                 end
             end
         end
-        ttlLog = ttl('End Audio Block');
+        ttlLog = ttl('End Audio Block',ttlLog);
     end
     
     if doVisualBlock
+        ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('visual'),ttlLog,ttl,[1 1 1]);
         for rep = 1:nReps
             ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
             thisOrder = randperm(nStims);
@@ -186,10 +188,10 @@ try
                 end
             end
         end
-        ttlLog = ttl('End Visual Block');
+        ttlLog = ttl('End Visual Block',ttlLog);
     end
     
-    
+    ttlLog = ttl('End of Task',ttlLog);
     
 catch exception
     cleanUpAndEndTask(ttlLog,fullfile(ptFolder,sprintf('ttlLog_emergencySave_%s',todaysDateStr)));
