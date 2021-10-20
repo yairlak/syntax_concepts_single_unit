@@ -1,4 +1,5 @@
-function conceptSyntax(patientNumber,useDAQ,debug,audioFileExtension,nReps,audioVisualOrBoth,substitutions)
+function conceptSyntax(patientNumber,useDAQ,debug,audioFileExtension, ...
+                       nReps,audioVisualOrBoth,substitutions)
 
 paradigmFolder = fileparts(which('conceptSyntax.m'));
 codeFolder = fileparts(paradigmFolder);
@@ -93,6 +94,10 @@ stimNums = arrayfun(@(x)str2double(regexp(x.name,'\d*','match','once')),stims);
 [~,ind] = sort(stimNums);
 stims = stims(ind);
 [loadedItems,textures] = loadAudioFiles(PTBparams,stimuliDirectory,stims);
+nStims = length(stims);
+stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,arrayfun(@(x)x,loadedItems.frequency,'uniformoutput',0));
+else
+    nStims = length(sentences);
 end
 
 %% Run the task
@@ -100,8 +105,6 @@ end
 ttl = @(message,log)sendTTL_em(message,[],PTBparams.dio,[],toc(PTBparams.timerStart),log);
 ttlLog = ttl('Begin Task',ttlLog);
 
-nStims = length(stims);
-stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,arrayfun(@(x)x,loadedItems.frequency,'uniformoutput',0));
 
 try
     
