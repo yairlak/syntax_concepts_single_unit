@@ -127,7 +127,7 @@ try
             ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
             thisOrder = randperm(nStims)
             for s = thisOrder
-                ttlLog = showStimulus(PTBparams,sentence{s},ttl,ttlLog);
+                ttlLog = showStimulus(PTBparams,sentences{s},ttl,ttlLog);
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
                 [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
                 save(ttlSaveName,'ttlLog');

@@ -3,6 +3,10 @@ if ~exist('skipInitializingScreen','var')||isempty(skipInitializingScreen)
     skipInitializingScreen = 0;
 end
 
+
+PTBparams.word_onset_duration = 0.5 % [sec]
+PTBparams.word_offset_duration = 0.5 % [sec]
+
 sca;
 PTBparam.ptID = ptID;
 PTBparams.daq = daq;
