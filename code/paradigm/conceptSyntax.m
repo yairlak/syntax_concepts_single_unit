@@ -1,5 +1,5 @@
-function conceptSyntax(patientNumber,useDAQ,debug,audioFileExtension, ...
-                       nReps,audioVisualOrBoth,substitutions)
+function conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFileExtension, ...
+                       nReps,maxStims,audioVisualOrBoth,substitutions)
 
 paradigmFolder = fileparts(which('conceptSyntax.m'));
 codeFolder = fileparts(paradigmFolder);
@@ -20,6 +20,9 @@ if ~exist('useDAQ','var')
             useDAQ = 0;
     end
 end
+if ~exist('includeTrainingBlock','var')||isempty(includeTrainingBlock)
+    includeTrainingBlock = 1;
+end
 if ~exist('debugMode','var')||isempty(debugMode)
     debugMode = 0;
 end
@@ -31,6 +34,10 @@ end
 if ~exist('nReps','var') || isempty(nReps)
     nReps = 1;
 end
+if ~exist('maxStims','var') || isempty(maxStims)
+    maxStims = inf;
+end
+
 if ~exist('audioVisualOrBoth','var') || isempty(audioVisualOrBoth)
     audioVisualOrBoth = 'audio';
 end
@@ -53,6 +60,8 @@ end
 dataDirectory = fullfile(fileparts(fileparts(paradigmFolder)),'data');
 stimuliDirectory = fullfile(strrep(dataDirectory,'data','stimuli'),...
     sprintf('Pt_%s',patientNumber{1}));
+trainingStimuliDirectory = fullfile(strrep(dataDirectory,'data','stimuli'),...
+    'Training');
 if ~exist(stimuliDirectory,'dir')
     mkdir(stimuliDirectory);
 end
@@ -65,8 +74,8 @@ if isempty(dir(fullfile(stimuliDirectory,['*',audioFileExtension])))
     disp('creating stimuli files')
     createAudioAndSentenceFiles(stimuliDirectory,'sentence_stimuli.txt',substitutions)
 end
-sentences = load(fullfile(stimuliDirectory,'sentencesToShow.mat'));
-sentences = sentences.sentences;
+
+
 %% Start diary and get parameters for this patient
 
 cd(dataDirectory);
@@ -84,12 +93,36 @@ ttlSaveName = fullfile(ptFolder,sprintf('ttlLog_%s',todaysDateStr));
 %% Start Psych Toolbox
 ttlLog = cell(0,3);
 [PTBparams,ttlLog] = initializePsychToolBoxForConceptSyntax(useDAQ,ttlLog,debug,patientNumber,0);
+ttl = @(message,log)sendTTL_em(message,[],PTBparams.dio,[],toc(PTBparams.timerStart),log);
 
+%% Run in a loop (once for training if requested, once for "real")
 
-%% Load audio stimuli
+if includeTrainingBlock
+    testModes = {'training','testing'};
+else
+    testModes = {'testing'};
+end
+
+for t = 1:length(testModes)
+
+    currentMode = testModes{t};
+    
+%% Load  stimuli
+switch currentMode
+    case 'training'
+        loadDir = trainingStimuliDirectory;
+        
+        
+    case 'testing'
+        loadDir = stimuliDirectory;
+end
+
+sentences = load(fullfile(loadDir,'sentencesToShow.mat'));
+sentences = sentences.sentences;
+
 if doAudioBlock
 disp('Loading audio stimuli...')
-stims = dir(fullfile(stimuliDirectory,['*',audioFileExtension]));
+stims = dir(fullfile(loadDir,['*',audioFileExtension]));
 stimNums = arrayfun(@(x)str2double(regexp(x.name,'\d*','match','once')),stims);
 [~,ind] = sort(stimNums);
 stims = stims(ind);
@@ -100,10 +133,18 @@ else
     nStims = length(sentences);
 end
 
+if nStims < maxStims
+    maxStims = nStims;
+end
 %% Run the task
 
-ttl = @(message,log)sendTTL_em(message,[],PTBparams.dio,[],toc(PTBparams.timerStart),log);
-ttlLog = ttl('Begin Task',ttlLog);
+
+switch currentMode
+    case 'training'
+        ttlLog = ttl('Begin Training Block',ttlLog);
+    case 'testing'
+        ttlLog = ttl('Begin Task',ttlLog);
+end
 
 
 try
@@ -111,7 +152,8 @@ try
     if doAudioBlock
         for rep = 1:nReps
             ttlLog = ttl(sprintf('Beginning Audio Block %d',rep),ttlLog);
-            thisOrder = randperm(nStims)
+            thisOrder = randperm(nStims);
+            thisOrder = thisOrder(1:maxStims)
             for s = thisOrder
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
                 ttlLog = playStimulus(sentences{s},stims(s).name,textures.audioHandles{s},stimDurations(s),ttl,ttlLog);
@@ -124,14 +166,17 @@ try
                 end
             end
         end
+        ttlLog = ttl('End Audio Block');
     end
     
     if doVisualBlock
         for rep = 1:nReps
             ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
-            thisOrder = randperm(nStims)
+            thisOrder = randperm(nStims);
+            thisOrder = thisOrder(1:maxStims)
             for s = thisOrder
-                ttlLog = showStimulus(PTBparams,sentences{s},ttl,ttlLog);
+                ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
+                ttlLog = showStimulus(PTBparams,sentences{s},s,ttl,ttlLog);
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
                 [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
                 save(ttlSaveName,'ttlLog');
@@ -141,15 +186,16 @@ try
                 end
             end
         end
-        
+        ttlLog = ttl('End Visual Block');
     end
     
-    cleanUpAndEndTask(ttlLog,ttlSaveName);
+    
     
 catch exception
     cleanUpAndEndTask(ttlLog,fullfile(ptFolder,sprintf('ttlLog_emergencySave_%s',todaysDateStr)));
     rethrow(exception)
 end
 
+end
 
-
+cleanUpAndEndTask(ttlLog,ttlSaveName);

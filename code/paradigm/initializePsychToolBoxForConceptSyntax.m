@@ -7,7 +7,7 @@ if ~exist('skipInitializingScreen','var')||isempty(skipInitializingScreen)
 end
 
 
-PTBparams.word_onset_duration = 0.2; % [sec]
+PTBparams.word_onset_duration = 0.2;%0.2; % [sec]
 PTBparams.word_offset_duration = 0.2; % [sec]
 
 sca;

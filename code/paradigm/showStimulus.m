@@ -1,6 +1,8 @@
-function ttlLog = playStimulus(PTBparams,sentence,ttl,ttlLog);
+function ttlLog = showStimulus(PTBparams,sentence,sentenceNum,ttl,ttlLog);
 
 words = regexp(sentence,'\w*(?=\s|$|\n|\.)','match');
+
+ttlLog = ttl(sprintf('Begin Sentence %d: %s',sentenceNum,sentence),ttlLog);
 
 word_cnt = 0;
 for word = words
@@ -16,5 +18,6 @@ for word = words
     WaitSecs(PTBparams.word_offset_duration);
 end % word
 
+ttlLog = ttl(sprintf('End of Sentence %d',sentenceNum),ttlLog);
 
 end

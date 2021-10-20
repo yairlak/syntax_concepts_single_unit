@@ -11,5 +11,5 @@ Screen('Flip', PTBparams.w);
 loadedItems.sounds = cellfun(@(x)formatAudioForPsychToolbox(x),sounds,'uniformoutput',0);
 loadedItems.frequency = cell2mat(freqs);
 clear sounds freqs
-textures.audioHandles = arrayfun(@(x)PsychPortAudio('Open',9,[],3,x,2),loadedItems.frequency,'uniformoutput',0);
+textures.audioHandles = arrayfun(@(x)PsychPortAudio('Open',[],[],[],x,2),loadedItems.frequency,'uniformoutput',0);
 cellfun(@(x,y)PsychPortAudio('FillBuffer',x,y),textures.audioHandles,loadedItems.sounds);
