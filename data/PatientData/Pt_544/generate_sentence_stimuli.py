@@ -9,12 +9,12 @@ Created on Mon Oct 18 19:08:19 2021
 from string import Template
 
 # CONCEPT 1
-concepts_1 = ['Princess Leia', 'Homer Simpson']
-concepts_1_hypernyms = [['movie character', 'beautiful warrior'], ['yellow cartoon', 'goofy dad']]
+concepts_1 = ['Yoda', 'the leopard']
+concepts_1_hypernyms = [['movie character', 'wise master'], ['dangerous animal', 'safari feline']]
 
 # CONCEPT 2
-concepts_2 = ['Yoda', 'Arya Stark']
-concepts_2_hypernyms = [['green creature', 'wise master'], ['brave girl', 'skilled fighter']]
+concepts_2 = ['Bart Simpson', 'Tyrion Lannister']
+concepts_2_hypernyms = [['TV cartoon', 'famous character'], ['great star', 'smart dwarf']]
 
 # VERBS
 verbs = ['chasing', 'racing', 'kissing', 'hugging']

@@ -1,9 +1,0 @@
-{Error: <a href="matlab: opentoline('/Users/cnl/Documents/PIPELINE/PARADIGMS/ConceptSyntax/syntax_concepts_single_unit/code/paradigm/initializePsychToolBoxForConceptSyntax.m',40,1)">File: initializePsychToolBoxForConceptSyntax.m Line: 40 Column: 1
-</a>At least one END is missing: the statement may begin here.
-
-Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('conceptSyntax', '/Users/cnl/Documents/PIPELINE/PARADIGMS/ConceptSyntax/syntax_concepts_single_unit/code/paradigm/conceptSyntax.m', 53)" style="font-weight:bold">conceptSyntax</a> (<a href="matlab: opentoline('/Users/cnl/Documents/PIPELINE/PARADIGMS/ConceptSyntax/syntax_concepts_single_unit/code/paradigm/conceptSyntax.m',53,0)">line 53</a>)
-[PTBparams,ttlLog] = initializePsychToolBoxForConceptSyntax(useDAQ,ttlLog,debug,patientNumber,0);
-} 
-<a href="matlab: opentoline('/Users/cnl/Documents/PIPELINE/PARADIGMS/ConceptSyntax/syntax_concepts_single_unit/code/paradigm/conceptSyntax.m',53,1)">53  </a>[PTBparams,ttlLog] = initializePsychToolBoxForConceptSyntax(useDAQ,ttlLog,debug,patientNumber,0);
-if system_dependent('IsDebugMode')==1, dbquit; end
-conceptSyntax(544,0,1,'wav')
