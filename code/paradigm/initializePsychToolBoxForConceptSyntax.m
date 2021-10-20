@@ -1,4 +1,6 @@
-function [PTBparams,ttlLog] = initializePsychToolBoxForConceptSyntax(daq,ttlLog,debugMode,ptID,skipInitializingScreen,timerStart)
+function [PTBparams,ttlLog] = initializePsychToolBoxForConceptSyntax(daq,ttlLog, ...
+                                                                     debugMode,ptID, ...
+                                                                     skipInitializingScreen,timerStart)
 if ~exist('skipInitializingScreen','var')||isempty(skipInitializingScreen)
     skipInitializingScreen = 0;
 end
@@ -113,5 +115,8 @@ if exist('timerStart','var')&&~isempty(timerStart)
     PTBparams.timerStart = timerStart;
 else
 PTBparams.timerStart = tic;
-ttlLog = sendTTL_em('timer_start',s,dio,el,toc(PTBparams.timerStart),ttlLog);
+
+if daq
+    ttlLog = sendTTL_em('timer_start',s,dio,el,toc(PTBparams.timerStart),ttlLog);
+end
 end

@@ -62,6 +62,7 @@ stims = dir(fullfile(stimuliDirectory,['*',audioFileExtension]));
 [loadedItems,textures] = loadAudioFiles(PTBparams,stimuliDirectory,stims);
 
 %% Run the task
+
 ttl = @(message,log)sendTTL_em(message,[],PTBparams.dio,[],toc(PTBparams.timerStart),log);
 ttlLog = ttl('Begin Task',ttlLog);
 
