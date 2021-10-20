@@ -1,4 +1,5 @@
-function conceptSyntax(patientNumber,useDAQ,debug,audioFileExtension,nReps,audioVisualOrBoth,substitutions)
+function conceptSyntax(patientNumber,useDAQ,debug,audioFileExtension, ...
+                       nReps,audioVisualOrBoth,substitutions)
 
 paradigmFolder = fileparts(which('conceptSyntax.m'));
 codeFolder = fileparts(paradigmFolder);
@@ -93,14 +94,17 @@ stimNums = arrayfun(@(x)str2double(regexp(x.name,'\d*','match','once')),stims);
 [~,ind] = sort(stimNums);
 stims = stims(ind);
 [loadedItems,textures] = loadAudioFiles(PTBparams,stimuliDirectory,stims);
+nStims = length(stims);
+stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,arrayfun(@(x)x,loadedItems.frequency,'uniformoutput',0));
+else
+    nStims = length(sentences);
 end
 
 %% Run the task
+
 ttl = @(message,log)sendTTL_em(message,[],PTBparams.dio,[],toc(PTBparams.timerStart),log);
 ttlLog = ttl('Begin Task',ttlLog);
 
-nStims = length(stims);
-stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,arrayfun(@(x)x,loadedItems.frequency,'uniformoutput',0));
 
 try
     
@@ -127,7 +131,7 @@ try
             ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
             thisOrder = randperm(nStims)
             for s = thisOrder
-                ttlLog = showStimulus(PTBparams,sentence{s},ttl,ttlLog);
+                ttlLog = showStimulus(PTBparams,sentences{s},ttl,ttlLog);
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
                 [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
                 save(ttlSaveName,'ttlLog');
