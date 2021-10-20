@@ -23,7 +23,7 @@ if ~exist('debugMode','var')||isempty(debugMode)
     debugMode = 0;
 end
 if ~exist('audioFileExtension','var')||isempty(audioFileExtension)
-    audioFileExtension = '.wav';
+    audioFileExtension = '.aiff';
 elseif ~strcmp(audioFileExtension(1),'.')
     audioFileExtension = ['.',audioFileExtension];
 end
@@ -106,6 +106,7 @@ try
     
     if doAudioBlock
         for rep = 1:nReps
+            ttlLog = ttl(sprintf('Beginning Audio Block %d',rep),ttlLog);
             thisOrder = randperm(nStims)
             for s = thisOrder
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
@@ -123,6 +124,7 @@ try
     
     if doVisualBlock
         for rep = 1:nReps
+            ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
             thisOrder = randperm(nStims)
             for s = thisOrder
                 ttlLog = showStimulus(PTBparams,sentence{s},ttl,ttlLog);
