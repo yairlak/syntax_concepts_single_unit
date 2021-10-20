@@ -5,13 +5,17 @@ if ~exist('skipInitializingScreen','var')||isempty(skipInitializingScreen)
     skipInitializingScreen = 0;
 end
 
+
+PTBparams.word_onset_duration = 0.5 % [sec]
+PTBparams.word_offset_duration = 0.5 % [sec]
+
 sca;
 PTBparam.ptID = ptID;
 PTBparams.daq = daq;
 PTBparams.debugMode = debugMode;
 
 KbName('UnifyKeyNames');
-PTBparams.EscKey = KbName('Escape');
+PTBparams.EscKey = KbName('q');
 
 %% initialize daq/usb port
 if daq
@@ -60,6 +64,7 @@ if debugMode
 end
 
 [PTBparams.w, PTBparams.wRect]=Screen('OpenWindow',PTBparams.screenNumber, PTBparams.gray);
+Screen('TextSize', PTBparams.w, 28);
 if isequal(PTBparams.wRect,[0 0 1920 1080])&&eyetracker
     PTBparams.subRect = [274 0 1920-274 1080];
 else
