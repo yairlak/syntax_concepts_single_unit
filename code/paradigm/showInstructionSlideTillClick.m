@@ -19,7 +19,7 @@ end
 ttlLog = ttl(sprintf('Instructions: %s',instructionText),ttlLog);
 
 [result mouseKeyOrTimeout] = waitForMouseOrKeyClickConceptSyntax(w,1,1);
-disp(find(mouseKeyOrTimeout))
+% disp(find(mouseKeyOrTimeout))
 pressedEsc = 0;
 if mouseKeyOrTimeout(2)
     if result.keyboard(PTBparams.EscKey)

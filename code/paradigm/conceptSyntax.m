@@ -126,16 +126,15 @@ stims = dir(fullfile(loadDir,['*',audioFileExtension]));
 stimNums = arrayfun(@(x)str2double(regexp(x.name,'\d*','match','once')),stims);
 [~,ind] = sort(stimNums);
 stims = stims(ind);
-[loadedItems,textures] = loadAudioFiles(PTBparams,stimuliDirectory,stims);
+[loadedItems,textures] = loadAudioFiles(PTBparams,loadDir,stims);
 nStims = length(stims);
 stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,arrayfun(@(x)x,loadedItems.frequency,'uniformoutput',0));
 else
     nStims = length(sentences);
 end
 
-if nStims < maxStims
-    maxStims = nStims;
-end
+nStimsToUse = min(nStims,maxStims);
+
 %% Run the task
 
 
@@ -150,10 +149,11 @@ end
 try
     
     if doAudioBlock
+        ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('audio'),ttlLog,ttl,[1 1 1]);
         for rep = 1:nReps
             ttlLog = ttl(sprintf('Beginning Audio Block %d',rep),ttlLog);
             thisOrder = randperm(nStims);
-            thisOrder = thisOrder(1:maxStims)
+            thisOrder = thisOrder(1:nStimsToUse)
             for s = thisOrder
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
                 ttlLog = playStimulus(sentences{s},stims(s).name,textures.audioHandles{s},stimDurations(s),ttl,ttlLog);
@@ -166,14 +166,15 @@ try
                 end
             end
         end
-        ttlLog = ttl('End Audio Block');
+        ttlLog = ttl('End Audio Block',ttlLog);
     end
     
     if doVisualBlock
+        ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('visual'),ttlLog,ttl,[1 1 1]);
         for rep = 1:nReps
             ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
             thisOrder = randperm(nStims);
-            thisOrder = thisOrder(1:maxStims)
+            thisOrder = thisOrder(1:nStimsToUse)
             for s = thisOrder
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
                 ttlLog = showStimulus(PTBparams,sentences{s},s,ttl,ttlLog);
@@ -186,10 +187,10 @@ try
                 end
             end
         end
-        ttlLog = ttl('End Visual Block');
+        ttlLog = ttl('End Visual Block',ttlLog);
     end
     
-    
+    ttlLog = ttl('End of Task',ttlLog);
     
 catch exception
     cleanUpAndEndTask(ttlLog,fullfile(ptFolder,sprintf('ttlLog_emergencySave_%s',todaysDateStr)));
