@@ -6,21 +6,46 @@ Created on Mon Oct 18 19:08:19 2021
 @author: yl254115
 """
 
+import argparse
 from string import Template
 
+
+parser = argparse.ArgumentParser()
 # CONCEPT 1
-concepts_1 = ['Princess Leia', 'Homer Simpson']
-concept_1_genders = ['feminine', 'masculine']
-concepts_1_hypernyms = [['movie character', 'beautiful warrior'], ['yellow cartoon', 'goofy dad']]
+parser.add_argument('--concept1', default=[], action='append',
+                    help='e.g., Jennifer Aniston')
+parser.add_argument('--concept1-gender', default=[], action='append',
+                    choices=['feminine', 'masculine'])
+parser.add_argument('--concept1-descriptions', default=[], action='append',
+                    nargs='*',
+                    help='two-words description, e.g., Famous actress')
+# CONCEPT 2
+parser.add_argument('--concept2', default=[], action='append',
+                    help='e.g., Barak Obahama')
+parser.add_argument('--concept2-gender', default=[], action='append',
+                    choices=['feminine', 'masculine'])
+parser.add_argument('--concept2-descriptions', default=[], action='append', 
+                    nargs='*',
+                    help='e.g., past president')
+# VERBS
+parser.add_argument('--verbs',
+                    default=['chasing', 'racing', 'kissing', 'hugging'])
+parser.add_argument('--verbs-clause',
+                    default=['is saying', 'is complaining'])
+args = parser.parse_args()
+
+print(args)
+
+# CONCEPT 1
+concepts_1 = args.concept1
+concept_1_genders = args.concept1_gender
+concepts_1_descriptions = args.concept1_descriptions
 
 # CONCEPT 2
-concepts_2 = ['Yoda', 'Arya Stark']
-concept_2_genders = ['masculine', 'feminine']
-concepts_2_hypernyms = [['green creature', 'wise master'], ['brave girl', 'skilled fighter']]
+concepts_2 = args.concept2
+concept_2_genders = args.concept2_gender
+concepts_2_descriptions = args.concept2_descriptions
 
-# VERBS
-verbs = ['chasing', 'racing', 'kissing', 'hugging']
-verbs_matrix = ['is saying', 'is complaining']
 
 conditions = {}
 conditions['CE-M+'] = Template(f'$concept1 who $concept2 is $verb is a $concept1_hypernym')
@@ -61,7 +86,8 @@ def create_sentences_coref(c1, c2, concept_1_gender, vs_matrix, vs):
                 words[-1] = 'her'
                 sentence = ' '.join(words)
                 sentence = sentence + '.'
-
+            else:
+                sentence = sentence + '.'
             sentences.append(sentence)
     return sentences
 
@@ -71,24 +97,24 @@ sentences = []
 for i_concept, (concept1, concept2, concept_1_gender, concept_2_gender) in enumerate(zip(concepts_1, concepts_2, concept_1_genders, concept_2_genders)):
     
     sentences.extend(create_sentences_2by2(concept1,
-                                           concepts_1_hypernyms[i_concept],
+                                           concepts_1_descriptions[i_concept],
                                            concept2,
-                                           verbs))
+                                           args.verbs))
     sentences.extend(create_sentences_2by2(concept2,
-                                           concepts_2_hypernyms[i_concept],
+                                           concepts_2_descriptions[i_concept],
                                            concept1,
-                                           verbs))
+                                           args.verbs))
     
     sentences.extend(create_sentences_coref(concept1,
                                             concept2,
                                             concept_1_gender,
-                                            verbs_matrix,
-                                            verbs))
+                                            args.verbs_clause,
+                                            args.verbs))
     sentences.extend(create_sentences_coref(concept2,
                                             concept1,
                                             concept_2_gender,
-                                            verbs_matrix,
-                                            verbs))
+                                            args.verbs_clause,
+                                            args.verbs))
     
 
 [print(s) for s in sentences]
@@ -96,5 +122,5 @@ with open('../../stimuli/sentence_stimuli.txt', 'w') as f:
     for i, s in enumerate(sentences):
         f.write(f'{i+1},{s}\n')
 
-            
-    
+print('-' * 80)
+print(f'Total number of sentences: {len(sentences)}')
