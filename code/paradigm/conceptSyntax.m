@@ -133,9 +133,8 @@ else
     nStims = length(sentences);
 end
 
-if nStims < maxStims
-    maxStims = nStims;
-end
+nStimsToUse = min(nStims,maxStims);
+
 %% Run the task
 
 
@@ -154,7 +153,7 @@ try
         for rep = 1:nReps
             ttlLog = ttl(sprintf('Beginning Audio Block %d',rep),ttlLog);
             thisOrder = randperm(nStims);
-            thisOrder = thisOrder(1:maxStims)
+            thisOrder = thisOrder(1:nStimsToUse)
             for s = thisOrder
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
                 ttlLog = playStimulus(sentences{s},stims(s).name,textures.audioHandles{s},stimDurations(s),ttl,ttlLog);
@@ -175,7 +174,7 @@ try
         for rep = 1:nReps
             ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
             thisOrder = randperm(nStims);
-            thisOrder = thisOrder(1:maxStims)
+            thisOrder = thisOrder(1:nStimsToUse)
             for s = thisOrder
                 ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
                 ttlLog = showStimulus(PTBparams,sentences{s},s,ttl,ttlLog);
