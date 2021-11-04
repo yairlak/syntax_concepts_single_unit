@@ -1,5 +1,76 @@
 function conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFileExtension, ...
-                       nReps,maxStims,audioVisualOrBoth,substitutions)
+    nReps,maxStims,audioVisualOrBoth,breakEveryNTrials,pathToVideoForTakingABreak,substitutions)
+
+% syntax: conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFileExtension, ...
+%     nReps,maxStims,audioVisualOrBoth,substitutions)
+% Except for patientNumber, any argument may be omitted or left empty to
+% select its default value
+%
+% patientNumber should the the ID number of the person completing the task
+% useDAQ (default = ask): 0 means no TTLs sent to recording system, 1 means
+%                         send TTLs to the recording system. This will
+%                         cause an error if the DAQ is not connected.
+% includeTrainingBlock (default = 1): 1 means include a training block. It
+%                      will play/show a few stimuli to get the patient used
+%                      to the task. If you've already done a training block
+%                      and have to start the task again for some reason,
+%                      you may enter 0 to skip training.
+% debug (default = 0): If debug is 1, the paradigm will show on a
+%                      transparent screen and you can interact with Matlab
+%                      while running the task (e.g. with a dbstop command).
+%                      You usually need to restart Matlab to make the
+%                      screen opaque again if you want to switch out of
+%                      debug mode.
+% audioFileExtension (default = 'aiff'): Used for identifying audio files.
+%                    When we generate audio files, they are currently saved
+%                    as .aiff files, so that's the default. If we change
+%                    that method eventually, we may want to change the
+%                    default.
+% nReps (default = 1): The number of times we will go through the whole set
+%                      of stimuli. Since we currently generate 160 stimuli,
+%                      one time through is all we take
+% maxStims (default = inf): If this is smaller than the number of stimuli
+%                           available, it will stop after presenting that
+%                           number. (This is mostly useful for debugging,
+%                          when you might want to see the task end without
+%                          waiting through all of the stimuli. Note that if
+%                          nReps > 1, the stimuli chosen for each round is
+%                          a random selection from the whole set, rather
+%                          than the same set. If you prefer to use the same
+%                          subset, you'll have to write those changes
+%                          yourself!
+% audioVisualOrBoth (default = 'audio'): The task can run either by
+%                         flashing the words on the screen in sequence
+%                         (visual) or by reading the sentences aloud
+%                         (audio). If you choose 'both', it will run the
+%                         audio version followed by the visual version.
+% breakEveryNTrials (default = 40): This should be a number, N, such that
+%                         after every N trials, if there are more than N/2
+%                         trials reamaining, it will prompt the user to
+%                         take a break.
+% pathToVideoForTakingABreak (default = {}): If you would like to show a
+%                         short video during the break, please include the
+%                         path (or paths if you want to show different ones
+%                         at different breaks) here. By default, no path is
+%                         included, so the break will just be instructions
+%                         to take a break.
+% substitutions (default = {}): This is for generating the audio files.
+%                         Certain words are hard for the text2audio method
+%                         to parse, so you may choose to spell them
+%                         differently when passing to text2audio, but you
+%                         still want them spelled properly in the written
+%                         sentences. You may include pairs of strings
+%                         within {}, where the odd entries are the correct
+%                         spellings and the even entries are the more
+%                         phonetic spellings.
+%
+% The paradigm expects there already to exist a .txt file of sentence
+% stimuli that will be used. It will convert to audio files the first time
+% this is run. If you want different audio files, you will have to
+% delete/move the ones that already exist.
+
+% Paradigm written by Emily Mankin with contributions from Yair Lakretz,
+% October 2021
 
 paradigmFolder = fileparts(which('conceptSyntax.m'));
 codeFolder = fileparts(paradigmFolder);
@@ -41,9 +112,21 @@ end
 if ~exist('audioVisualOrBoth','var') || isempty(audioVisualOrBoth)
     audioVisualOrBoth = 'audio';
 end
+
 if ~exist('substitutions','var')
     substitutions = [];
 end
+
+if ~exist('breakEveryNTrials','var') || isempty(breakEveryNTrials)
+    breakEveryNTrials = 40;
+end
+if ~exist('pathToVideoForTakingABreak','var') || isempty(pathToVideoForTakingABreak)
+    pathToVideoForTakingABreak = {};
+end
+if ischar(pathToVideoForTakingABreak)
+    pathToVideoForTakingABreak = {pathToVideoForTakingABreak};
+end
+videoCounter = 1;
 
 switch audioVisualOrBoth
     case 'audio'
@@ -104,99 +187,115 @@ else
 end
 
 for t = 1:length(testModes)
-
+    
     currentMode = testModes{t};
     
-%% Load  stimuli
-switch currentMode
-    case 'training'
-        loadDir = trainingStimuliDirectory;
-        
-        
-    case 'testing'
-        loadDir = stimuliDirectory;
-end
-
-sentences = load(fullfile(loadDir,'sentencesToShow.mat'));
-sentences = sentences.sentences;
-
-if doAudioBlock
-disp('Loading audio stimuli...')
-stims = dir(fullfile(loadDir,['*',audioFileExtension]));
-stimNums = arrayfun(@(x)str2double(regexp(x.name,'\d*','match','once')),stims);
-[~,ind] = sort(stimNums);
-stims = stims(ind);
-[loadedItems,textures] = loadAudioFiles(PTBparams,loadDir,stims);
-nStims = length(stims);
-stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,arrayfun(@(x)x,loadedItems.frequency,'uniformoutput',0));
-else
-    nStims = length(sentences);
-end
-
-nStimsToUse = min(nStims,maxStims);
-
-%% Run the task
-
-
-switch currentMode
-    case 'training'
-        ttlLog = ttl('Begin Training Block',ttlLog);
-    case 'testing'
-        ttlLog = ttl('Begin Task',ttlLog);
-end
-
-
-try
+    %% Load  stimuli
+    switch currentMode
+        case 'training'
+            loadDir = trainingStimuliDirectory;
+            
+            
+        case 'testing'
+            loadDir = stimuliDirectory;
+    end
+    
+    sentences = load(fullfile(loadDir,'sentencesToShow.mat'));
+    sentences = sentences.sentences;
     
     if doAudioBlock
-        ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('audio'),ttlLog,ttl,[1 1 1]);
-        for rep = 1:nReps
-            ttlLog = ttl(sprintf('Beginning Audio Block %d',rep),ttlLog);
-            thisOrder = randperm(nStims);
-            thisOrder = thisOrder(1:nStimsToUse)
-            for s = thisOrder
-                ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
-                ttlLog = playStimulus(sentences{s},stims(s).name,textures.audioHandles{s},stimDurations(s),ttl,ttlLog);
-                ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
-                [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
-                save(ttlSaveName,'ttlLog');
-                if pressedEsc
-                    cleanUpAndEndTask(ttlLog,ttlSaveName);
-                    return
-                end
-            end
-        end
-        ttlLog = ttl('End Audio Block',ttlLog);
+        disp('Loading audio stimuli...')
+        stims = dir(fullfile(loadDir,['*',audioFileExtension]));
+        stimNums = arrayfun(@(x)str2double(regexp(x.name,'\d*','match','once')),stims);
+        [~,ind] = sort(stimNums);
+        stims = stims(ind);
+        [loadedItems,textures] = loadAudioFiles(PTBparams,loadDir,stims);
+        nStims = length(stims);
+        stimDurations = cellfun(@(x,f)length(x)/f,loadedItems.sounds,arrayfun(@(x)x,loadedItems.frequency,'uniformoutput',0));
+    else
+        nStims = length(sentences);
     end
     
-    if doVisualBlock
-        ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('visual'),ttlLog,ttl,[1 1 1]);
-        for rep = 1:nReps
-            ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
-            thisOrder = randperm(nStims);
-            thisOrder = thisOrder(1:nStimsToUse)
-            for s = thisOrder
-                ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
-                ttlLog = showStimulus(PTBparams,sentences{s},s,ttl,ttlLog);
-                ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
-                [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
-                save(ttlSaveName,'ttlLog');
-                if pressedEsc
-                    cleanUpAndEndTask(ttlLog,ttlSaveName);
-                    return
-                end
-            end
+    if ~isempty(pathToVideoForTakingABreak)
+        disp('Loading video stimuli...')
+        for vid = length(pathToVideoForTakingABreak):-1:1
+            [videoInfo(vid).texture, videoInfo(vid).duration] = Screen('OpenMovie', PTBparams.w, pathToVideoForTakingABreak{vid});
+            videoInfo(vid).videoPath = pathToVideoForTakingABreak{vid};
+            [~,videoInfo(vid).videoName] = fileparts(pathToVideoForTakingABreak{vid});
         end
-        ttlLog = ttl('End Visual Block',ttlLog);
     end
     
-    ttlLog = ttl('End of Task',ttlLog);
+    nStimsToUse = min(nStims,maxStims);
     
-catch exception
-    cleanUpAndEndTask(ttlLog,fullfile(ptFolder,sprintf('ttlLog_emergencySave_%s',todaysDateStr)));
-    rethrow(exception)
-end
-
+    %% Run the task
+    
+    
+    switch currentMode
+        case 'training'
+            ttlLog = ttl('Begin Training Block',ttlLog);
+        case 'testing'
+            ttlLog = ttl('Begin Task',ttlLog);
+    end
+    
+    
+    try
+        
+        if doAudioBlock
+            ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('audio'),ttlLog,ttl,[1 1 1]);
+            for rep = 1:nReps
+                ttlLog = ttl(sprintf('Beginning Audio Block %d',rep),ttlLog);
+                thisOrder = randperm(nStims);
+                thisOrder = thisOrder(1:nStimsToUse)
+                for s = thisOrder
+                    ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
+                    ttlLog = playStimulus(sentences{s},stims(s).name,textures.audioHandles{s},stimDurations(s),ttl,ttlLog);
+                    ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
+                    [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
+                    save(ttlSaveName,'ttlLog');
+                    if pressedEsc
+                        cleanUpAndEndTask(ttlLog,ttlSaveName);
+                        return
+                    end
+                    if ~mod(s,breakEveryNTrials)
+                        [ttlLog, videoCounter] = conceptSyntaxOfferABreak(PTBparams,videoInfo(videoCounter),ttlLog,ttl,videoCounter,length(videoInfo));
+                    end
+                end
+            end
+            ttlLog = ttl('End Audio Block',ttlLog);
+        end
+        
+        if doVisualBlock
+            ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('visual'),ttlLog,ttl,[1 1 1]);
+            for rep = 1:nReps
+                ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
+                thisOrder = randperm(nStims);
+                thisOrder = thisOrder(1:nStimsToUse)
+                for j = 1:length(thisOrder)
+                    s = thisOrder(j);
+                    ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
+                    ttlLog = showStimulus(PTBparams,sentences{s},s,ttl,ttlLog);
+                    ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
+                    [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
+                    save(ttlSaveName,'ttlLog');
+                    if pressedEsc
+                        cleanUpAndEndTask(ttlLog,ttlSaveName);
+                        return
+                    end
+                    if ~mod(j,breakEveryNTrials)
+                        [ttlLog,videoCounter] = conceptSyntaxOfferABreak(PTBparams,videoInfo(videoCounter),ttlLog,ttl,videoCounter,length(videoInfo));
+                    end
+                end
+            end
+            ttlLog = ttl('End Visual Block',ttlLog);
+        end
+        
+        ttlLog = ttl('End of Task',ttlLog);
+        
+    catch exception
+        cleanUpAndEndTask(ttlLog,fullfile(ptFolder,sprintf('ttlLog_emergencySave_%s',todaysDateStr)));
+        rethrow(exception)
+    end
+    
 end
 
 cleanUpAndEndTask(ttlLog,ttlSaveName);
