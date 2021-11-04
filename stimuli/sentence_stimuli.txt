@@ -6,75 +6,35 @@
 6,Jennifer Aniston is the famous actress who barack obama is chasing.
 7,Jennifer Aniston who is chasing barack obama is a famous actress.
 8,Jennifer Aniston is the famous actress who is chasing barack obama.
-9,Jennifer Aniston who barack obama is racing is a movie star.
-10,Jennifer Aniston is the movie star who barack obama is racing.
-11,Jennifer Aniston who is racing barack obama is a movie star.
-12,Jennifer Aniston is the movie star who is racing barack obama.
-13,Jennifer Aniston who barack obama is racing is a famous actress.
-14,Jennifer Aniston is the famous actress who barack obama is racing.
-15,Jennifer Aniston who is racing barack obama is a famous actress.
-16,Jennifer Aniston is the famous actress who is racing barack obama.
-17,Jennifer Aniston who barack obama is kissing is a movie star.
-18,Jennifer Aniston is the movie star who barack obama is kissing.
-19,Jennifer Aniston who is kissing barack obama is a movie star.
-20,Jennifer Aniston is the movie star who is kissing barack obama.
-21,Jennifer Aniston who barack obama is kissing is a famous actress.
-22,Jennifer Aniston is the famous actress who barack obama is kissing.
-23,Jennifer Aniston who is kissing barack obama is a famous actress.
-24,Jennifer Aniston is the famous actress who is kissing barack obama.
-25,Jennifer Aniston who barack obama is hugging is a movie star.
-26,Jennifer Aniston is the movie star who barack obama is hugging.
-27,Jennifer Aniston who is hugging barack obama is a movie star.
-28,Jennifer Aniston is the movie star who is hugging barack obama.
-29,Jennifer Aniston who barack obama is hugging is a famous actress.
-30,Jennifer Aniston is the famous actress who barack obama is hugging.
-31,Jennifer Aniston who is hugging barack obama is a famous actress.
-32,Jennifer Aniston is the famous actress who is hugging barack obama.
-33,Barack obama who Jennifer Aniston is chasing is a past president.
-34,Barack obama is the past president who Jennifer Aniston is chasing.
-35,Barack obama who is chasing Jennifer Aniston is a past president.
-36,Barack obama is the past president who is chasing Jennifer Aniston.
-37,Barack obama who Jennifer Aniston is chasing is a great man.
-38,Barack obama is the great man who Jennifer Aniston is chasing.
-39,Barack obama who is chasing Jennifer Aniston is a great man.
-40,Barack obama is the great man who is chasing Jennifer Aniston.
-41,Barack obama who Jennifer Aniston is racing is a past president.
-42,Barack obama is the past president who Jennifer Aniston is racing.
-43,Barack obama who is racing Jennifer Aniston is a past president.
-44,Barack obama is the past president who is racing Jennifer Aniston.
-45,Barack obama who Jennifer Aniston is racing is a great man.
-46,Barack obama is the great man who Jennifer Aniston is racing.
-47,Barack obama who is racing Jennifer Aniston is a great man.
-48,Barack obama is the great man who is racing Jennifer Aniston.
-49,Barack obama who Jennifer Aniston is kissing is a past president.
-50,Barack obama is the past president who Jennifer Aniston is kissing.
-51,Barack obama who is kissing Jennifer Aniston is a past president.
-52,Barack obama is the past president who is kissing Jennifer Aniston.
-53,Barack obama who Jennifer Aniston is kissing is a great man.
-54,Barack obama is the great man who Jennifer Aniston is kissing.
-55,Barack obama who is kissing Jennifer Aniston is a great man.
-56,Barack obama is the great man who is kissing Jennifer Aniston.
-57,Barack obama who Jennifer Aniston is hugging is a past president.
-58,Barack obama is the past president who Jennifer Aniston is hugging.
-59,Barack obama who is hugging Jennifer Aniston is a past president.
-60,Barack obama is the past president who is hugging Jennifer Aniston.
-61,Barack obama who Jennifer Aniston is hugging is a great man.
-62,Barack obama is the great man who Jennifer Aniston is hugging.
-63,Barack obama who is hugging Jennifer Aniston is a great man.
-64,Barack obama is the great man who is hugging Jennifer Aniston.
-65,Jennifer Aniston is saying that barack obama is chasing her.
-66,Jennifer Aniston is saying that barack obama is racing her.
-67,Jennifer Aniston is saying that barack obama is kissing her.
-68,Jennifer Aniston is saying that barack obama is hugging her.
-69,Jennifer Aniston is complaining that barack obama is chasing her.
-70,Jennifer Aniston is complaining that barack obama is racing her.
-71,Jennifer Aniston is complaining that barack obama is kissing her.
-72,Jennifer Aniston is complaining that barack obama is hugging her.
-73,Barack obama is saying that Jennifer Aniston is chasing him.
-74,Barack obama is saying that Jennifer Aniston is racing him.
-75,Barack obama is saying that Jennifer Aniston is kissing him.
-76,Barack obama is saying that Jennifer Aniston is hugging him.
-77,Barack obama is complaining that Jennifer Aniston is chasing him.
-78,Barack obama is complaining that Jennifer Aniston is racing him.
-79,Barack obama is complaining that Jennifer Aniston is kissing him.
-80,Barack obama is complaining that Jennifer Aniston is hugging him.
+9,Jennifer Aniston who barack obama is kissing is a movie star.
+10,Jennifer Aniston is the movie star who barack obama is kissing.
+11,Jennifer Aniston who is kissing barack obama is a movie star.
+12,Jennifer Aniston is the movie star who is kissing barack obama.
+13,Jennifer Aniston who barack obama is kissing is a famous actress.
+14,Jennifer Aniston is the famous actress who barack obama is kissing.
+15,Jennifer Aniston who is kissing barack obama is a famous actress.
+16,Jennifer Aniston is the famous actress who is kissing barack obama.
+17,Barack obama who Jennifer Aniston is chasing is a past president.
+18,Barack obama is the past president who Jennifer Aniston is chasing.
+19,Barack obama who is chasing Jennifer Aniston is a past president.
+20,Barack obama is the past president who is chasing Jennifer Aniston.
+21,Barack obama who Jennifer Aniston is chasing is a great man.
+22,Barack obama is the great man who Jennifer Aniston is chasing.
+23,Barack obama who is chasing Jennifer Aniston is a great man.
+24,Barack obama is the great man who is chasing Jennifer Aniston.
+25,Barack obama who Jennifer Aniston is kissing is a past president.
+26,Barack obama is the past president who Jennifer Aniston is kissing.
+27,Barack obama who is kissing Jennifer Aniston is a past president.
+28,Barack obama is the past president who is kissing Jennifer Aniston.
+29,Barack obama who Jennifer Aniston is kissing is a great man.
+30,Barack obama is the great man who Jennifer Aniston is kissing.
+31,Barack obama who is kissing Jennifer Aniston is a great man.
+32,Barack obama is the great man who is kissing Jennifer Aniston.
+33,Jennifer Aniston is saying that barack obama is chasing her.
+34,Jennifer Aniston is saying that barack obama is kissing her.
+35,Jennifer Aniston is complaining that barack obama is chasing her.
+36,Jennifer Aniston is complaining that barack obama is kissing her.
+37,Barack obama is saying that Jennifer Aniston is chasing him.
+38,Barack obama is saying that Jennifer Aniston is kissing him.
+39,Barack obama is complaining that Jennifer Aniston is chasing him.
+40,Barack obama is complaining that Jennifer Aniston is kissing him.

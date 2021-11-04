@@ -28,10 +28,10 @@ parser.add_argument('--concept2-descriptions', default=[], action='append',
                     nargs='*',
                     help='e.g., past president')
 # VERBS
-parser.add_argument('--verbs',
-                    default=['chasing', 'racing', 'kissing', 'hugging'])
-parser.add_argument('--verbs-clause',
-                    default=['is saying', 'is complaining'])
+parser.add_argument('--verbs', default=[], nargs="*")
+#                    default=['chasing', 'racing', 'kissing', 'hugging'])
+parser.add_argument('--verbs-clause', default=[], nargs="*")
+#                    default=['is saying', 'is complaining'])
 args = parser.parse_args()
 
 print(args)
