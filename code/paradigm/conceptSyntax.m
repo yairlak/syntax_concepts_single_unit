@@ -68,6 +68,10 @@ function conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFile
 % stimuli that will be used. It will convert to audio files the first time
 % this is run. If you want different audio files, you will have to
 % delete/move the ones that already exist.
+%
+%  THE EASIEST WAY TO CREATE THESE FILES IS TO RUN
+%  prepConceptSyntax(pt,exp)
+%  BEFORE YOU START
 
 % Paradigm written by Emily Mankin with contributions from Yair Lakretz,
 % October 2021
@@ -194,8 +198,6 @@ for t = 1:length(testModes)
     switch currentMode
         case 'training'
             loadDir = trainingStimuliDirectory;
-            
-            
         case 'testing'
             loadDir = stimuliDirectory;
     end
@@ -228,8 +230,7 @@ for t = 1:length(testModes)
     nStimsToUse = min(nStims,maxStims);
     
     %% Run the task
-    
-    
+
     switch currentMode
         case 'training'
             ttlLog = ttl('Begin Training Block',ttlLog);
