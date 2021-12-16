@@ -48,7 +48,7 @@ function conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFile
 %                         after every N trials, if there are more than N/2
 %                         trials reamaining, it will prompt the user to
 %                         take a break.
-% pathToVideoForTakingABreak (default = {}): If you would like to show a
+% pathToVideoForTakingABreak (default = ask): If you would like to show a
 %                         short video during the break, please include the
 %                         path (or paths if you want to show different ones
 %                         at different breaks) here. By default, no path is
@@ -119,9 +119,9 @@ if ~exist('audioVisualOrBoth','var') || isempty(audioVisualOrBoth)
     switch av
         case 'Audio Only'
             audioVisualOrBoth = 'audio';
-            case 'Visual Only'
+        case 'Visual Only'
             audioVisualOrBoth = 'visual';
-            case 'Both Audio and Visual'
+        case 'Both Audio and Visual'
             audioVisualOrBoth = 'both';
     end
 end
@@ -134,7 +134,19 @@ if ~exist('breakEveryNTrials','var') || isempty(breakEveryNTrials)
     breakEveryNTrials = 40;
 end
 if ~exist('pathToVideoForTakingABreak','var') || isempty(pathToVideoForTakingABreak)
-    pathToVideoForTakingABreak = {'/Users/cnl/Desktop/harry_potter_hermoine_granger_dance_scene.mp4'};
+    yn = questdlg('Would you like to select a video to show at the breaks?','Breaktime Video?',...
+        'Use default video','Select new','No video','Use default video');
+    switch yn
+        case 'Use default video'
+            pathToVideoForTakingABreak = {'/Users/cnl/Desktop/harry_potter_hermoine_granger_dance_scene.mp4';
+                '/Users/NattyBoo/Desktop/544_clips/Harry & Hermione Dance to Forget Their Worries _ Harry Potter and the Deathly Hallows Pt. 1-EsfZiZwhw68.mp4'};
+        case 'Select new'
+            disp('Please select the video you would like to play');
+            [a,b] = uigetfile('*.mp4');
+            pathToVideoForTakingABreak = {fullfile(b,a)};
+        case 'No video'
+            pathToVideoForTakingABreak = {};
+    end
 end
 if ischar(pathToVideoForTakingABreak)
     pathToVideoForTakingABreak = {pathToVideoForTakingABreak};
@@ -227,19 +239,36 @@ for t = 1:length(testModes)
         nStims = length(sentences);
     end
     
-    if ~isempty(pathToVideoForTakingABreak)
+    % Load videos for taking a break, but only if we're in the testing mode
+    if strcmp(currentMode,'testing') && ~isempty(pathToVideoForTakingABreak)
         disp('Loading video stimuli...')
+        failedVideoLoads = false(1,length(pathToVideoForTakingABreak));
         for vid = length(pathToVideoForTakingABreak):-1:1
-            [videoInfo(vid).texture, videoInfo(vid).duration] = Screen('OpenMovie', PTBparams.w, pathToVideoForTakingABreak{vid});
-            videoInfo(vid).videoPath = pathToVideoForTakingABreak{vid};
-            [~,videoInfo(vid).videoName] = fileparts(pathToVideoForTakingABreak{vid});
+            if exist(pathToVideoForTakingABreak{vid},'file')
+                try
+                    [videoInfo(vid).texture, videoInfo(vid).duration] = Screen('OpenMovie', PTBparams.w, pathToVideoForTakingABreak{vid});
+                    videoInfo(vid).videoPath = pathToVideoForTakingABreak{vid};
+                    [~,videoInfo(vid).videoName] = fileparts(pathToVideoForTakingABreak{vid});
+                catch
+                    failedVideoLoads(vid) = 1;
+                end
+            else
+                failedVideoLoads(vid) = 1;
+            end
         end
+        if exist('videoInfo','var') && ~isempty(videoInfo)
+            videoInfo(failedVideoLoads) = [];
+        else
+            videoInfo = [];
+        end
+    else
+        videoInfo = [];
     end
     
     nStimsToUse = min(nStims,maxStims);
     
     %% Run the task
-
+    
     switch currentMode
         case 'training'
             ttlLog = ttl('Begin Training Block',ttlLog);
@@ -267,7 +296,11 @@ for t = 1:length(testModes)
                         return
                     end
                     if ~mod(s,breakEveryNTrials)
-                        [ttlLog, videoCounter] = conceptSyntaxOfferABreak(PTBparams,videoInfo(videoCounter),ttlLog,ttl,videoCounter,length(videoInfo));
+                        if isempty(videoInfo)
+                            [ttlLog, videoCounter] = conceptSyntaxOfferABreak(PTBparams,[],ttlLog,ttl,videoCounter,length(videoInfo));
+                        else
+                            [ttlLog, videoCounter] = conceptSyntaxOfferABreak(PTBparams,videoInfo(videoCounter),ttlLog,ttl,videoCounter,length(videoInfo));
+                        end
                     end
                 end
             end
@@ -292,7 +325,11 @@ for t = 1:length(testModes)
                         return
                     end
                     if ~mod(j,breakEveryNTrials)
-                        [ttlLog,videoCounter] = conceptSyntaxOfferABreak(PTBparams,videoInfo(videoCounter),ttlLog,ttl,videoCounter,length(videoInfo));
+                        if isempty(videoInfo)
+                            [ttlLog, videoCounter] = conceptSyntaxOfferABreak(PTBparams,[],ttlLog,ttl,videoCounter,length(videoInfo));
+                        else
+                            [ttlLog,videoCounter] = conceptSyntaxOfferABreak(PTBparams,videoInfo(videoCounter),ttlLog,ttl,videoCounter,length(videoInfo));
+                        end
                     end
                 end
             end
