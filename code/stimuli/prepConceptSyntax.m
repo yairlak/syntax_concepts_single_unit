@@ -1,9 +1,9 @@
-function prepConceptSyntax(pt,exp)
+function prepConceptSyntax(pt)
 csLoc = which('conceptSyntax');
 csSuperDir = fileparts(fileparts(csLoc));
 addpath(genpath(csSuperDir));
 
-stimuliDir = fullfile(strrep(csSuperDir,'code','stimuli'),sprintf('Pt_%d_xp_%d',pt,exp));
+stimuliDir = fullfile(strrep(csSuperDir,'code','stimuli'),sprintf('Pt_%d',pt));
 createNew = 1;
 if ~exist(stimuliDir,'dir')
 mkdir(stimuliDir);
