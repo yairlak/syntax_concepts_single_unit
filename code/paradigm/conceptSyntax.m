@@ -39,7 +39,7 @@ function conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFile
 %                          than the same set. If you prefer to use the same
 %                          subset, you'll have to write those changes
 %                          yourself!
-% audioVisualOrBoth (default = 'audio'): The task can run either by
+% audioVisualOrBoth (default = ask): The task can run either by
 %                         flashing the words on the screen in sequence
 %                         (visual) or by reading the sentences aloud
 %                         (audio). If you choose 'both', it will run the
@@ -98,8 +98,8 @@ end
 if ~exist('includeTrainingBlock','var')||isempty(includeTrainingBlock)
     includeTrainingBlock = 1;
 end
-if ~exist('debugMode','var')||isempty(debugMode)
-    debugMode = 0;
+if ~exist('debug','var')||isempty(debug)
+    debug = 0;
 end
 if ~exist('audioFileExtension','var')||isempty(audioFileExtension)
     audioFileExtension = '.aiff';
@@ -114,7 +114,16 @@ if ~exist('maxStims','var') || isempty(maxStims)
 end
 
 if ~exist('audioVisualOrBoth','var') || isempty(audioVisualOrBoth)
-    audioVisualOrBoth = 'audio';
+    av = questdlg('Which modalities should we use?','Which modality?',...
+        'Audio Only','Visual Only','Both Audio and Visual','Visual Only');
+    switch av
+        case 'Audio Only'
+            audioVisualOrBoth = 'audio';
+            case 'Visual Only'
+            audioVisualOrBoth = 'visual';
+            case 'Both Audio and Visual'
+            audioVisualOrBoth = 'both';
+    end
 end
 
 if ~exist('substitutions','var')
@@ -125,7 +134,7 @@ if ~exist('breakEveryNTrials','var') || isempty(breakEveryNTrials)
     breakEveryNTrials = 40;
 end
 if ~exist('pathToVideoForTakingABreak','var') || isempty(pathToVideoForTakingABreak)
-    pathToVideoForTakingABreak = {};
+    pathToVideoForTakingABreak = {'/Users/cnl/Desktop/harry_potter_hermoine_granger_dance_scene.mp4'};
 end
 if ischar(pathToVideoForTakingABreak)
     pathToVideoForTakingABreak = {pathToVideoForTakingABreak};
@@ -133,7 +142,7 @@ end
 videoCounter = 1;
 
 switch audioVisualOrBoth
-    case 'audio'
+    case {'audio','auditory'}
         doAudioBlock = 1;
         doVisualBlock = 0;
     case 'visual'
