@@ -313,7 +313,8 @@ for t = 1:length(testModes)
                 ttlLog = ttl(sprintf('Beginning Audio Block %d',rep),ttlLog);
                 thisOrder = randperm(nStims);
                 thisOrder = thisOrder(1:nStimsToUse)
-                for s = thisOrder
+                for j = 1:length(thisOrder)
+                    s = thisOrder(j);
                     ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
                     ttlLog = playStimulus(sentences{s},stims(s).name,textures.audioHandles{s},stimDurations(s),ttl,ttlLog);
                     ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
@@ -323,7 +324,7 @@ for t = 1:length(testModes)
                         cleanUpAndEndTask(ttlLog,ttlSaveName);
                         return
                     end
-                    if ~mod(s,breakEveryNTrials)
+                    if ~mod(j,breakEveryNTrials)
                         if isempty(videoInfo)
                             [ttlLog, videoCounter] = conceptSyntaxOfferABreak(PTBparams,[],ttlLog,ttl,videoCounter,length(videoInfo));
                         else
