@@ -1,4 +1,4 @@
-function conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFileExtension, ...
+       function conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFileExtension, ...
     nReps,maxStims,audioVisualOrBoth,breakEveryNTrials,pathToVideoForTakingABreak,substitutions)
 
 % syntax: conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFileExtension, ...
@@ -43,7 +43,7 @@ function conceptSyntax(patientNumber,useDAQ,includeTrainingBlock,debug,audioFile
 %                         flashing the words on the screen in sequence
 %                         (visual) or by reading the sentences aloud
 %                         (audio). If you choose 'both', it will run the
-%                         audio version followed by the visual version.
+%                         visual version followed by the audio version.
 % breakEveryNTrials (default = 40): This should be a number, N, such that
 %                         after every N trials, if there are more than N/2
 %                         trials reamaining, it will prompt the user to
@@ -138,8 +138,7 @@ if ~exist('pathToVideoForTakingABreak','var') || isempty(pathToVideoForTakingABr
         'Use default video','Select new','No video','Use default video');
     switch yn
         case 'Use default video'
-            pathToVideoForTakingABreak = {'/Users/cnl/Desktop/harry_potter_hermoine_granger_dance_scene.mp4';
-                '/Users/NattyBoo/Desktop/544_clips/Harry & Hermione Dance to Forget Their Worries _ Harry Potter and the Deathly Hallows Pt. 1-EsfZiZwhw68.mp4'};
+            pathToVideoForTakingABreak = {'/Users/NattyBoo/MYLOCALWORKINGCOPY/PARADIGMS/ConceptSyntax/syntax_concepts_single_unit/stimuli/Pt_558/Tangled_Maximus_Best Moments_comp.mp4'};
         case 'Select new'
             disp('Please select the video you would like to play');
             [a,b] = uigetfile('*.mp4');
@@ -176,7 +175,7 @@ end
 if isempty(dir(fullfile(stimuliDirectory,'*.txt')))
     disp('Please find the list of sentences to read');
     [d, f] = uigetfile;
-    copyfile(fullfile(d,f),fullfile(stimuliDirectory,'sentence_stimuli.txt'));
+    copyfile(fullfile(f,d),fullfile(stimuliDirectory,'sentence_stimuli.txt'));
 end
 if isempty(dir(fullfile(stimuliDirectory,['*',audioFileExtension])))
     disp('creating stimuli files')
@@ -278,6 +277,35 @@ for t = 1:length(testModes)
     
     
     try
+        if doVisualBlock
+            ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('visual'),ttlLog,ttl,[1 1 1]);
+            for rep = 1:nReps
+                ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
+                thisOrder = randperm(nStims);
+                thisOrder = thisOrder(1:nStimsToUse)
+                for j = 1:length(thisOrder)
+                    s = thisOrder(j);
+                    ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
+                    ttlLog = showStimulus(PTBparams,sentences{s},s,ttl,ttlLog);
+                    ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
+                    [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
+                    save(ttlSaveName,'ttlLog');
+                    if pressedEsc
+                        cleanUpAndEndTask(ttlLog,ttlSaveName);
+                        return
+                    end
+                    if ~mod(j,breakEveryNTrials)
+                        if isempty(videoInfo)
+                            [ttlLog, videoCounter] = conceptSyntaxOfferABreak(PTBparams,[],ttlLog,ttl,videoCounter,length(videoInfo));
+                        else
+                            [ttlLog,videoCounter] = conceptSyntaxOfferABreak(PTBparams,videoInfo(videoCounter),ttlLog,ttl,videoCounter,length(videoInfo));
+                        end
+                    end
+                end
+            end
+            ttlLog = ttl('End Visual Block',ttlLog);
+        end
+        
         
         if doAudioBlock
             ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('audio'),ttlLog,ttl,[1 1 1]);
@@ -307,34 +335,7 @@ for t = 1:length(testModes)
             ttlLog = ttl('End Audio Block',ttlLog);
         end
         
-        if doVisualBlock
-            ttlLog = showInstructionSlideTillClick(PTBparams,instructionText('visual'),ttlLog,ttl,[1 1 1]);
-            for rep = 1:nReps
-                ttlLog = ttl(sprintf('Beginning Visual Block %d',rep),ttlLog);
-                thisOrder = randperm(nStims);
-                thisOrder = thisOrder(1:nStimsToUse)
-                for j = 1:length(thisOrder)
-                    s = thisOrder(j);
-                    ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1,0);
-                    ttlLog = showStimulus(PTBparams,sentences{s},s,ttl,ttlLog);
-                    ttlLog = showInstructionSlideForDuration(PTBparams,'+',ttlLog,ttl,1+rand(1)/5);
-                    [ttlLog pressedEsc] = showInstructionSlideTillClick(PTBparams,'*',ttlLog,ttl,[101, 252, 108]/255);
-                    save(ttlSaveName,'ttlLog');
-                    if pressedEsc
-                        cleanUpAndEndTask(ttlLog,ttlSaveName);
-                        return
-                    end
-                    if ~mod(j,breakEveryNTrials)
-                        if isempty(videoInfo)
-                            [ttlLog, videoCounter] = conceptSyntaxOfferABreak(PTBparams,[],ttlLog,ttl,videoCounter,length(videoInfo));
-                        else
-                            [ttlLog,videoCounter] = conceptSyntaxOfferABreak(PTBparams,videoInfo(videoCounter),ttlLog,ttl,videoCounter,length(videoInfo));
-                        end
-                    end
-                end
-            end
-            ttlLog = ttl('End Visual Block',ttlLog);
-        end
+        
         
         ttlLog = ttl('End of Task',ttlLog);
         
